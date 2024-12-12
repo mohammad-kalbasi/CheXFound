@@ -16,12 +16,16 @@ conda activate dinov2-extras
 ## Dataset
 ### CXR-1M
 The root directory of the dataset should hold the following contents:
+- `<ROOT>/train/mimic/mimic_000000.jpg`
 - `<ROOT>/train/mimic/mimic_000001.jpg`
 - `<ROOT>/train/[...]`
+- `<ROOT>/train/chexpert/chexpert_000000.jpg`
 - `<ROOT>/train/chexpert/chexpert_000001.jpg`
 - `<ROOT>/train/[...]`
+- `<ROOT>/train/padchest/padchest_000000.jpg`
 - `<ROOT>/train/padchest/padchest_000001.jpg`
 - `<ROOT>/train/[...]`
+- `<ROOT>/train/brax/brax_000000.jpg`
 - `<ROOT>/train/brax/brax_000001.jpg`
 - `<ROOT>/train/[...]`
 - `<ROOT>/val`
