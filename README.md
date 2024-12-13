@@ -55,9 +55,73 @@ for split in ImageNet.Split:
 ```
 
 ## Foundation model pretraining
+CheXFound is pretrained using the ViT-L architecture at a range of chest X-ray resolutions.
+Pretraining CheXFound at image resolution 512x512 can be done with the following command lines:
+```commandline
+export PYTHONPATH=.
+export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
+
+nohup torchrun --nproc_per_node=8 chexfound/train/train.py \
+--config-file chexfound/configs/train/vitl16_ibot333_highres512.yaml \
+--output-dir /outputs/chexfound/ibot333_highres512 \
+train.dataset_path=CXRDatabase:split=TRAIN:root="/path/to/<ROOT>":extra="/path/to/<EXTRA>" \
+&> /outputs/chexfound/ibot333_highres512.log &
+```
 
 ## Evaluation
+This codebase implements linear probe and global and local representations integration (GLoRI).
+Evaluating linear probe performance can be done with the following command lines:
+```commandline
+export PYTHONPATH=.
+export CUDA_VISIBLE_DEVICES=0,1,2,3
 
-## Model interpretation
+nohup torchrun --nproc_per_node=4 chexfound/eval/classification/linear_glori.py \
+--batch-size 64 \
+--val-epochs 100 \
+--epochs 100 \
+--image-size 512 \
+--save-checkpoint-frequency 20 \
+--eval-period-epochs 20 \
+--val-metric-type binary_auc \
+--config-file /outputs/chexfound/ibot333_highres512/config.yaml \
+--pretrained-weights /outputs/chexfound/ibot333_highres512/eval/training_249999/teacher_checkpoint.pth \
+--output-dir /outputs/chexfound/shenzhen/ibot333_512_eval_shenzhen \
+--train-dataset Shenzhen:split=TRAIN:root=/eval/shenzhen \
+--val-dataset Shenzhen:split=VAL:root=/eval/shenzhen \
+--test-dataset Shenzhen:split=TEST:root=/eval/shenzhen \
+ &> /outputs/chexfound/shenzhen/ibot333_512_eval_shenzhen.log &
+```
 
+Evaluating GLoRI performance can use the command lines below:
+```commandline
+export PYTHONPATH=.
+export CUDA_VISIBLE_DEVICES=0,1,2,3
+
+nohup torchrun --nproc_per_node=4 chexfound/eval/classification/linear_glori.py \
+--batch-size 64 \
+--val-epochs 100 \
+--epochs 100 \
+--image-size 512 \
+--glori \
+--cat-cls \
+--save-checkpoint-frequency 20 \
+--eval-period-epochs 20 \
+--val-metric-type binary_auc \
+--config-file /outputs/chexfound/ibot333_highres512/config.yaml \
+--pretrained-weights /outputs/chexfound/ibot333_highres512/eval/training_249999/teacher_checkpoint.pth \
+--output-dir /outputs/chexfound/shenzhen/ibot333_512_eval_shenzhen_glori \
+--train-dataset Shenzhen:split=TRAIN:root=/eval/shenzhen \
+--val-dataset Shenzhen:split=VAL:root=/eval/shenzhen \
+--test-dataset Shenzhen:split=TEST:root=/eval/shenzhen \
+ &> /outputs/chexfound/shenzhen/ibot333_512_eval_shenzhen_glori.log &
+```
+
+## Interpretation
+A jupyter notebook file  is created to illustrate the model inference and model interpretation with attention maps.
+A GLoRI is trained on top of the frozen foundation model CheXFound. 
+Examples show chest X-rays with cardiomegaly. 
+Predictive confidence is provided as well as attention maps to interpret the predictions.
+![predictive_confidence](/notebooks/predictive_confidence.png)
 ![glori_attns](/notebooks/glori_attns.png)
+
+## Hugging Face models
