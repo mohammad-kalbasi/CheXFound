@@ -117,7 +117,7 @@ nohup torchrun --nproc_per_node=4 chexfound/eval/classification/linear_glori.py 
 ```
 
 ## Interpretation
-A jupyter notebook file  is created to illustrate the model inference and model interpretation with attention maps.
+A jupyter notebook file ![chexfound_example.ipynb](./notebooks/chexfound_example.ipynb)  is created to illustrate the model inference and model interpretation with attention maps.
 A GLoRI is trained on top of the frozen foundation model CheXFound. 
 Examples show chest X-rays with cardiomegaly. 
 Predictive confidence is provided as well as attention maps to interpret the predictions.
