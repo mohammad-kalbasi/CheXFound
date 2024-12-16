@@ -3,7 +3,7 @@
 This repository contains source code to train and evaluate the vision-centric foundation model **CheXFound**. 
 We pretrained CheXFound on up to 1 million chest X-ray images from publicly available sources. 
 
-## Step-by-step guide to CheXFound with GLoRI
+## Guide to CheXFound with GLoRI
 
 A jupyter notebook file [chexfound_example.ipynb](./notebooks/chexfound_example.ipynb)  is created to illustrate the model inference and model interpretation with attention maps.
 A GLoRI is trained on top of the frozen foundation model CheXFound. 
