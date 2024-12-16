@@ -10,7 +10,6 @@ Model checkpoints and configuration files required to kick off the jupyter noteb
 A GLoRI is trained on top of the frozen foundation model CheXFound.
 Examples show chest X-rays with cardiomegaly. Attention maps and predictive confidence are computed for the chest X-ray:
 ![predictive_confidence](/notebooks/predictive_confidence.png)
-<img src=/notebooks/predictive_confidence.png alt="predictive_confidence" width="300">
 
 Attention maps for several chest X-rays are provided to illustrate interpretation results.
 ![glori_attns](/notebooks/glori_attns.png)
