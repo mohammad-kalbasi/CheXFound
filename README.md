@@ -3,6 +3,17 @@
 This repository contains source code to train and evaluate the vision-centric foundation model **CheXFound**. 
 We pretrained CheXFound on up to 1 million chest X-ray images from publicly available sources. 
 
+## Step-by-step guide to CheXFound with GLoRI
+
+A jupyter notebook file [chexfound_example.ipynb](./notebooks/chexfound_example.ipynb)  is created to illustrate the model inference and model interpretation with attention maps.
+A GLoRI is trained on top of the frozen foundation model CheXFound. 
+Examples show chest X-rays with cardiomegaly. 
+Predictive confidence is computed.
+![predictive_confidence](/notebooks/predictive_confidence.png)
+
+Attention maps for several chest X-rays are provided to illustrate interpretation results.
+![glori_attns](/notebooks/glori_attns.png)
+
 ## Environment
 The training and evaluation code requires PyTorch 2.0 and xFormers 0.0.18 as well as a number of other 3rd party packages. 
 Note that the code has only been tested with the specified versions and also expects a Linux environment. 
@@ -115,15 +126,3 @@ nohup torchrun --nproc_per_node=4 chexfound/eval/classification/linear_glori.py 
 --test-dataset Shenzhen:split=TEST:root=/eval/shenzhen \
  &> /outputs/chexfound/shenzhen/ibot333_512_eval_shenzhen_glori.log &
 ```
-
-## Interpretation
-A jupyter notebook file [chexfound_example.ipynb](./notebooks/chexfound_example.ipynb)  is created to illustrate the model inference and model interpretation with attention maps.
-A GLoRI is trained on top of the frozen foundation model CheXFound. 
-Examples show chest X-rays with cardiomegaly. 
-Predictive confidence is computed.
-![predictive_confidence](/notebooks/predictive_confidence.png)
-
-Attention maps for several chest X-rays are provided to illustrate interpretation results.
-![glori_attns](/notebooks/glori_attns.png)
-
-## Hugging Face models
