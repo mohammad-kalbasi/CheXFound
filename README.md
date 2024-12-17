@@ -5,9 +5,11 @@ We pretrained CheXFound on up to 1 million chest X-ray images from publicly avai
 
 ## Guide to CheXFound with GLoRI
 
-A jupyter notebook file [chexfound_example.ipynb](./notebooks/chexfound_example.ipynb)  is created to illustrate model inference and interpretation.
-Model checkpoints and configuration files required to kick off the jupyter notebook can be accessed from [Google Drive](https://drive.google.com/drive/folders/1GX2BWbujuVABtVpSZ4PTBykGULzrw806?usp=sharing).
+A jupyter notebook [chexfound_example.ipynb](./notebooks/chexfound_example.ipynb)  is created to illustrate model inference and interpretation.
+Model checkpoints and configuration files to kick off the jupyter notebook can be accessed from [Google Drive](https://drive.google.com/drive/folders/1GX2BWbujuVABtVpSZ4PTBykGULzrw806?usp=sharing).
 A GLoRI is trained on top of the frozen foundation model CheXFound.
+The GLoRI head uses an embedding dimension of 768 and 8 multi-attention heads.
+CheXFound uses the ViT-Large architecture with a patch size of 16 and is trained at the image resolution of 512x512.
 Examples show chest X-rays with cardiomegaly. Attention maps and predictive confidence are computed for the chest X-ray:
 ![predictive_confidence](/notebooks/predictive_confidence.png)
 
