@@ -3,6 +3,13 @@
 This repository contains source code to train and evaluate the vision-centric foundation model **CheXFound**. 
 We pretrained CheXFound on up to 1 million chest X-ray images from publicly available sources. 
 
+## MICCAI 2024 CXR-LT Challenge
+CheXFound was one of the top winning methods on the MICCAI 2024 CXR-LT challenge: [https://cxr-lt.github.io/CXR-LT-2024/](https://cxr-lt.github.io/CXR-LT-2024/). Shout out to yangz16!! :trophy::trophy::trophy:
+
+Presenting slides: [Slides](https://drive.google.com/file/d/1DLCSEO8MODc_a3rHpr5jzz3ykNlavABL/view?usp=drive_link)
+
+Technical report: [Report](https://drive.google.com/file/d/1ISPUlEIRB2dsjnFvH5nDQzByx6z7cA9W/view?usp=drive_link)
+
 ## Guide to CheXFound with GLoRI
 
 A jupyter notebook [chexfound_example.ipynb](./notebooks/chexfound_example.ipynb)  is created to illustrate model inference and interpretation.
@@ -127,4 +134,14 @@ nohup torchrun --nproc_per_node=4 chexfound/eval/classification/linear_glori.py 
 --val-dataset Shenzhen:split=VAL:root=/eval/shenzhen \
 --test-dataset Shenzhen:split=TEST:root=/eval/shenzhen \
  &> /outputs/chexfound/shenzhen/ibot333_512_eval_shenzhen_glori.log &
+```
+
+## Citation
+```
+@article{yang2025chest,
+  title={Chest X-ray Foundation Model with Global and Local Representations Integration},
+  author={Yang, Zefan and Xu, Xuanang and Zhang, Jiajin and Wang, Ge and Kalra, Mannudeep K and Yan, Pingkun},
+  journal={arXiv preprint arXiv:2502.05142},
+  year={2025}
+}
 ```
