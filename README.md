@@ -8,9 +8,9 @@ CheXFound was one of the top winning methods on the MICCAI 2024 CXR-LT challenge
 
 Shout out to **yangz16**!! :trophy::trophy::trophy:
 
-Our presenting slides: [Slides](https://drive.google.com/file/d/1DLCSEO8MODc_a3rHpr5jzz3ykNlavABL/view?usp=drive_link)
+Our presenting slides: [[slides]](https://drive.google.com/file/d/1DLCSEO8MODc_a3rHpr5jzz3ykNlavABL/view?usp=drive_link)
 
-Our technical report and research paper: [Report](https://drive.google.com/file/d/1ISPUlEIRB2dsjnFvH5nDQzByx6z7cA9W/view?usp=drive_link) [arXiv](https://arxiv.org/abs/2502.05142)
+Our technical report and research paper: [[report]](https://drive.google.com/file/d/1ISPUlEIRB2dsjnFvH5nDQzByx6z7cA9W/view?usp=drive_link) [[arXiv]](https://arxiv.org/abs/2502.05142)
 
 ## Guide to CheXFound with GLoRI
 
