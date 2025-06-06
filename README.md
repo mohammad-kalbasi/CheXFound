@@ -4,11 +4,13 @@ This repository contains source code to train and evaluate the vision-centric fo
 We pretrained CheXFound on up to 1 million chest X-ray images from publicly available sources. 
 
 ## MICCAI 2024 CXR-LT Challenge
-CheXFound was one of the top winning methods on the MICCAI 2024 CXR-LT challenge: [https://cxr-lt.github.io/CXR-LT-2024/](https://cxr-lt.github.io/CXR-LT-2024/). Shout out to yangz16!! :trophy::trophy::trophy:
+CheXFound was one of the top winning methods on the MICCAI 2024 CXR-LT challenge: [https://cxr-lt.github.io/CXR-LT-2024/](https://cxr-lt.github.io/CXR-LT-2024/). 
 
-Presenting slides: [Slides](https://drive.google.com/file/d/1DLCSEO8MODc_a3rHpr5jzz3ykNlavABL/view?usp=drive_link)
+Shout out to yangz16!! :trophy::trophy::trophy:
 
-Technical report: [Report](https://drive.google.com/file/d/1ISPUlEIRB2dsjnFvH5nDQzByx6z7cA9W/view?usp=drive_link)
+Our presenting slides: [Slides](https://drive.google.com/file/d/1DLCSEO8MODc_a3rHpr5jzz3ykNlavABL/view?usp=drive_link)
+
+Our technical report: [Report](https://drive.google.com/file/d/1ISPUlEIRB2dsjnFvH5nDQzByx6z7cA9W/view?usp=drive_link)
 
 ## Guide to CheXFound with GLoRI
 
