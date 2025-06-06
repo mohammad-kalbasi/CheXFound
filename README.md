@@ -6,7 +6,7 @@ We pretrained CheXFound on up to 1 million chest X-ray images from publicly avai
 ## MICCAI 2024 CXR-LT Challenge
 CheXFound was one of the top winning methods on the MICCAI 2024 CXR-LT challenge: [https://cxr-lt.github.io/CXR-LT-2024/](https://cxr-lt.github.io/CXR-LT-2024/). 
 
-Shout out to $$yangz16$$!! :trophy::trophy::trophy:
+Shout out to $yangz16$!! :trophy::trophy::trophy:
 
 Our presenting slides: [Slides](https://drive.google.com/file/d/1DLCSEO8MODc_a3rHpr5jzz3ykNlavABL/view?usp=drive_link)
 
