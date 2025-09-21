@@ -23,25 +23,35 @@ import torch.distributed as dist
 from fvcore.common.checkpoint import Checkpointer, PeriodicCheckpointer
 import pandas as pd
 
-from chexfound.data import SamplerType, make_data_loader, make_dataset
-from chexfound.data.transforms import make_classification_eval_transform, make_classification_train_transform
-import chexfound.distributed as distributed
-from chexfound.eval.metrics import MetricType, build_metric
-from chexfound.eval.setup import get_args_parser as get_setup_args_parser
-from chexfound.eval.setup import setup_and_build_model
-from chexfound.eval.utils import (ModelWithIntermediateLayers, evaluate, apply_method_to_nested_values,
-                                  make_datasets, make_data_loaders, extract_hyperparameters_from_model,
-                                  is_padded_matrix, collate_fn_3d, str2bool, trainable_parameters, bitfit,
-                                  evaluate_preds)
-from chexfound.eval.classification.utils import (setup_linear_classifiers, setup_glori, LinearPostprocessor)
-from chexfound.logging import MetricLogger
-from chexfound.data.wrappers import FewShotDatasetWrapper, SystemicSamplerWrapper
-from chexfound.models.vision_transformer import DinoVisionTransformer
+from ...data import SamplerType, make_data_loader, make_dataset
+from ...data.transforms import make_classification_eval_transform, make_classification_train_transform
+from ... import distributed
+from ..metrics import MetricType, build_metric
+from ..setup import get_args_parser as get_setup_args_parser
+from ..setup import setup_and_build_model
+from ..utils import (
+    ModelWithIntermediateLayers,
+    evaluate,
+    apply_method_to_nested_values,
+    make_datasets,
+    make_data_loaders,
+    extract_hyperparameters_from_model,
+    is_padded_matrix,
+    collate_fn_3d,
+    str2bool,
+    trainable_parameters,
+    bitfit,
+    evaluate_preds,
+)
+from .utils import setup_linear_classifiers, setup_glori, LinearPostprocessor
+from ...logging import MetricLogger
+from ...data.wrappers import FewShotDatasetWrapper, SystemicSamplerWrapper
+from ...models.vision_transformer import DinoVisionTransformer
 
 from peft import LoraConfig, get_peft_model
-from chexfound.eval.losses import AsymmetricLoss
+from ..losses import AsymmetricLoss
 
-from chexfound.data.datasets import CXRLT
+from ...data.datasets import CXRLT
 
 logger = logging.getLogger("chexfound")
 

@@ -22,9 +22,9 @@ from torch import nn
 import torchvision
 from torchmetrics import MetricCollection
 
-from chexfound.data import DatasetWithEnumeratedTargets, SamplerType, make_data_loader, make_dataset
-import chexfound.distributed as distributed
-from chexfound.logging import MetricLogger
+from ..data import DatasetWithEnumeratedTargets, SamplerType, make_data_loader, make_dataset
+from .. import distributed
+from ..logging import MetricLogger
 
 logger = logging.getLogger("chexfound")
 

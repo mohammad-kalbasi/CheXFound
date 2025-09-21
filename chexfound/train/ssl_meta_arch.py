@@ -9,14 +9,14 @@ import logging
 import torch
 from torch import nn
 
-from chexfound.loss import DINOLoss, iBOTPatchLoss, KoLeoLoss
-from chexfound.models import build_model_from_cfg
-from chexfound.layers import DINOHead
-from chexfound.utils.utils import has_batchnorms
-from chexfound.utils.param_groups import get_params_groups_with_decay, fuse_params_groups
-from chexfound.fsdp import get_fsdp_wrapper, ShardedGradScaler, get_fsdp_modules, reshard_fsdp_model
+from ..loss import DINOLoss, iBOTPatchLoss, KoLeoLoss
+from ..models import build_model_from_cfg
+from ..layers import DINOHead
+from ..utils.utils import has_batchnorms
+from ..utils.param_groups import get_params_groups_with_decay, fuse_params_groups
+from ..fsdp import get_fsdp_wrapper, ShardedGradScaler, get_fsdp_modules, reshard_fsdp_model
 
-from chexfound.models.vision_transformer import BlockChunk
+from ..models.vision_transformer import BlockChunk
 
 
 try:

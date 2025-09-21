@@ -11,7 +11,7 @@ import numpy as np
 import torch
 from torch.utils.data.sampler import Sampler
 
-import chexfound.distributed as distributed
+from .. import distributed
 
 
 class EpochSampler(Sampler):

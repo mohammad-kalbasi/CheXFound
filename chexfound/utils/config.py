@@ -9,10 +9,10 @@ import os
 
 from omegaconf import OmegaConf
 
-import chexfound.distributed as distributed
-from chexfound.logging import setup_logging
-from chexfound.utils import utils
-from chexfound.configs import dinov2_default_config
+from .. import distributed
+from ..logging import setup_logging
+from . import utils
+from ..configs import dinov2_default_config
 
 
 logger = logging.getLogger("chexfound")

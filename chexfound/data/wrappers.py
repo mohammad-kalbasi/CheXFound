@@ -1,7 +1,7 @@
 import torch
 import numpy as np
-from chexfound.data.utils import get_fewshot_in_nih
-from chexfound.data.datasets import NIHChestXray
+from .utils import get_fewshot_in_nih
+from .datasets import NIHChestXray
 
 class FewShotDatasetWrapper(torch.utils.data.Subset):
     def __init__(self, dataset, shots=16):

@@ -18,14 +18,14 @@ from torch import nn
 from torch.utils.data import TensorDataset
 from torchmetrics import MetricTracker
 
-from chexfound.data import make_dataset
-from chexfound.data.transforms import make_classification_eval_transform
-from chexfound.distributed import get_global_rank, get_global_size
-from chexfound.eval.metrics import MetricType, build_metric
-from chexfound.eval.setup import get_args_parser as get_setup_args_parser
-from chexfound.eval.setup import setup_and_build_model
-from chexfound.eval.utils import evaluate, extract_features
-from chexfound.utils.dtype import as_torch_dtype
+from ..data import make_dataset
+from ..data.transforms import make_classification_eval_transform
+from ..distributed import get_global_rank, get_global_size
+from .metrics import MetricType, build_metric
+from .setup import get_args_parser as get_setup_args_parser
+from .setup import setup_and_build_model
+from .utils import evaluate, extract_features
+from ..utils.dtype import as_torch_dtype
 
 
 logger = logging.getLogger("chexfound")

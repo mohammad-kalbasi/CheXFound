@@ -7,9 +7,9 @@ import logging
 import os
 import sys
 
-from chexfound.eval.log_regression import get_args_parser as get_log_regression_args_parser
-from chexfound.logging import setup_logging
-from chexfound.run.submit import get_args_parser, submit_jobs
+from ...eval.log_regression import get_args_parser as get_log_regression_args_parser
+from ...logging import setup_logging
+from ..submit import get_args_parser, submit_jobs
 
 
 logger = logging.getLogger("chexfound")
@@ -20,7 +20,7 @@ class Evaluator:
         self.args = args
 
     def __call__(self):
-        from chexfound.eval.log_regression import main as log_regression_main
+        from ...eval.log_regression import main as log_regression_main
 
         self._setup_args()
         log_regression_main(self.args)
