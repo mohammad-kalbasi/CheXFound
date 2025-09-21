@@ -12,16 +12,16 @@ from functools import partial
 from fvcore.common.checkpoint import Checkpointer, PeriodicCheckpointer
 import torch
 
-from chexfound.data import SamplerType, make_data_loader, make_dataset
-from chexfound.data import collate_data_and_cast, DataAugmentationDINO, MaskingGenerator
-import chexfound.distributed as distributed
-from chexfound.fsdp import FSDPCheckpointer
-from chexfound.logging import MetricLogger
-from chexfound.utils.config import setup
-from chexfound.utils.utils import CosineScheduler
+from ..data import SamplerType, make_data_loader, make_dataset
+from ..data import collate_data_and_cast, DataAugmentationDINO, MaskingGenerator
+from .. import distributed
+from ..fsdp import FSDPCheckpointer
+from ..logging import MetricLogger
+from ..utils.config import setup
+from ..utils.utils import CosineScheduler
 
-from chexfound.train.ssl_meta_arch import SSLMetaArch
-from chexfound import utils
+from .ssl_meta_arch import SSLMetaArch
+from .. import utils
 
 
 torch.backends.cuda.matmul.allow_tf32 = True  # PyTorch 1.12 sets this to False by default

@@ -9,7 +9,7 @@ import os
 import sys
 from typing import Optional
 
-import chexfound.distributed as distributed
+from .. import distributed
 from .helpers import MetricLogger, SmoothedValue
 
 

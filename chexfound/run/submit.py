@@ -11,7 +11,7 @@ from typing import List, Optional
 
 import submitit
 
-from chexfound.utils.cluster import (
+from ..utils.cluster import (
     get_slurm_executor_parameters,
     get_slurm_partition,
     get_user_checkpoint_path,

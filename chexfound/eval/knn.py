@@ -14,13 +14,13 @@ from typing import List, Optional
 import torch
 from torch.nn.functional import one_hot, softmax
 
-import chexfound.distributed as distributed
-from chexfound.data import SamplerType, make_data_loader, make_dataset
-from chexfound.data.transforms import make_classification_eval_transform
-from chexfound.eval.metrics import AccuracyAveraging, build_topk_accuracy_metric
-from chexfound.eval.setup import get_args_parser as get_setup_args_parser
-from chexfound.eval.setup import setup_and_build_model
-from chexfound.eval.utils import ModelWithNormalize, evaluate, extract_features
+from .. import distributed
+from ..data import SamplerType, make_data_loader, make_dataset
+from ..data.transforms import make_classification_eval_transform
+from .metrics import AccuracyAveraging, build_topk_accuracy_metric
+from .setup import get_args_parser as get_setup_args_parser
+from .setup import setup_and_build_model
+from .utils import ModelWithNormalize, evaluate, extract_features
 
 
 logger = logging.getLogger("chexfound")

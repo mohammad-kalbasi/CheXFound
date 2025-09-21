@@ -2,10 +2,10 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-from chexfound.eval.utils import Model3DWrapper
-import chexfound.distributed as distributed
+from ..utils import Model3DWrapper
+from ... import distributed
 
-from chexfound.eval.classification.glori import GLoRI, create_mldecoder_input
+from .glori import GLoRI, create_mldecoder_input
 
 def create_linear_input(x_tokens_list, use_n_blocks, use_avgpool):
     intermediate_output = x_tokens_list[-use_n_blocks:]

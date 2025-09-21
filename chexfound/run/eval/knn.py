@@ -7,9 +7,9 @@ import logging
 import os
 import sys
 
-from chexfound.eval.knn import get_args_parser as get_knn_args_parser
-from chexfound.logging import setup_logging
-from chexfound.run.submit import get_args_parser, submit_jobs
+from ...eval.knn import get_args_parser as get_knn_args_parser
+from ...logging import setup_logging
+from ..submit import get_args_parser, submit_jobs
 
 
 logger = logging.getLogger("chexfound")
@@ -20,7 +20,7 @@ class Evaluator:
         self.args = args
 
     def __call__(self):
-        from chexfound.eval.knn import main as knn_main
+        from ...eval.knn import main as knn_main
 
         self._setup_args()
         knn_main(self.args)

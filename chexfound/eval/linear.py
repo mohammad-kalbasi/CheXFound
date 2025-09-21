@@ -17,14 +17,14 @@ import torch.nn as nn
 from torch.nn.parallel import DistributedDataParallel
 from fvcore.common.checkpoint import Checkpointer, PeriodicCheckpointer
 
-from chexfound.data import SamplerType, make_data_loader, make_dataset
-from chexfound.data.transforms import make_classification_eval_transform, make_classification_train_transform
-import chexfound.distributed as distributed
-from chexfound.eval.metrics import MetricType, build_metric
-from chexfound.eval.setup import get_args_parser as get_setup_args_parser
-from chexfound.eval.setup import setup_and_build_model
-from chexfound.eval.utils import ModelWithIntermediateLayers, evaluate
-from chexfound.logging import MetricLogger
+from ..data import SamplerType, make_data_loader, make_dataset
+from ..data.transforms import make_classification_eval_transform, make_classification_train_transform
+from .. import distributed
+from .metrics import MetricType, build_metric
+from .setup import get_args_parser as get_setup_args_parser
+from .setup import setup_and_build_model
+from .utils import ModelWithIntermediateLayers, evaluate
+from ..logging import MetricLogger
 
 
 logger = logging.getLogger("chexfound")

@@ -7,7 +7,7 @@ import os
 from typing import Any
 
 import torch
-import chexfound.distributed as distributed
+from .. import distributed
 from functools import partial
 from fvcore.common.checkpoint import Checkpointer
 from torch.distributed.fsdp import FullyShardedDataParallel as FSDP

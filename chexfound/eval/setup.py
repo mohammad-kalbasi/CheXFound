@@ -9,9 +9,9 @@ from typing import Any, List, Optional, Tuple
 import torch
 import torch.backends.cudnn as cudnn
 
-from chexfound.models import build_model_from_cfg
-from chexfound.utils.config import setup
-import chexfound.utils.utils as dinov2_utils
+from ..models import build_model_from_cfg
+from ..utils.config import setup
+from ..utils import utils as dinov2_utils
 
 def get_args_parser(
     description: Optional[str] = None,

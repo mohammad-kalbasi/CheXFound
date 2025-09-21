@@ -11,7 +11,7 @@ import time
 
 import torch
 
-import chexfound.distributed as distributed
+from .. import distributed
 
 
 logger = logging.getLogger("chexfound")
